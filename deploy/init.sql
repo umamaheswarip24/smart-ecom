@@ -1,0 +1,24 @@
+ 
+CREATE DATABASE IF NOT EXISTS inventory;
+USE inventory;
+
+CREATE TABLE IF NOT EXISTS stock (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    qty INT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS cart_transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_name VARCHAR(100),
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    amount DECIMAL(10,2),
+    method VARCHAR(50),
+    discount_code VARCHAR(50),
+    final_amount DECIMAL(10,2),
+    paid_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+  cart:
+    build: ../cart-service
+    ports:
+      - "3001:3001"
+
+  payment:
+    build: ../payment-service
+    ports:
+      - "3002:3002"
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - rabbitmq
+
+  inventory:
+    build: ../inventory-service
+    ports:
+      - "3003:3003"
+    depends_on:
+      - mysql
+    restart: always
+
+  discount:
+    image: node:20
+    working_dir: /app
+    volumes:
+      - ../discount-function:/app
+    command: sh -c "npm install && npx serverless offline --host 0.0.0.0"
+    ports:
+      - "3000:3000"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  mysql:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=inventory
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
