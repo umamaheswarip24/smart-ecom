@@ -398,46 +398,31 @@ GET http://localhost:3003/inventory/view
 ## Screenshots
 
 ### 1. All Services Running
-![Docker Compose Up](screenshots/docker-compose-up.png)
 
 ### 2. Consumer Waiting for Events
-![Consumer Running](screenshots/consumer-running.png)
 
 ### 3. Inventory Service — Add Item
-![Inventory Add](screenshots/inventory-add.png)
 
 ### 4. Inventory Service — View All Items
-![Inventory View](screenshots/inventory-view.png)
 
 ### 5. Inventory Service — Get By ID
-![Inventory Get By ID](screenshots/inventory-getbyid.png)
 
 ### 6. Cart Service — Add Item
-![Cart Add](screenshots/cart-add.png)
 
 ### 7. Cart Service — View Cart
-![Cart View](screenshots/cart-view.png)
 
 ### 8. Discount Function — Apply NEWYEAR Code
-![Discount Applied](screenshots/discount-applied.png)
 
 ### 9. Payment — Without Discount
-![Payment No Discount](screenshots/payment-no-discount.png)
 
 ### 10. Consumer — Event Received
-![Consumer Event Received](screenshots/consumer-event-received.png)
 
 ### 11. Payment — With Discount
-![Payment With Discount](screenshots/payment-with-discount.png)
 
 ### 12. Consumer — Second Event Received
-![Consumer Event 2](screenshots/consumer-event-2.png)
 
 ### 13. RabbitMQ Dashboard — Events Queue
-![RabbitMQ Queue](screenshots/rabbitmq-queue.png)
 
 ### 14. MySQL — Inventory Persisted
-![MySQL Inventory](screenshots/mysql-inventory.png)
 
 ### 15. MySQL — Payments Table
-![MySQL Payments](screenshots/mysql-payments.png)
